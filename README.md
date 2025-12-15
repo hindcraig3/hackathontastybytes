@@ -1,6 +1,6 @@
 # Tasty Bytes Hackathon
 
-**Welcome to Tasty Bytes!**
+**Welcome to Tasty Bytes!** :wave:
 
 Your mission is to enable Tasty Bytes to better understand it's business with data. 
 
@@ -27,22 +27,32 @@ Each team will have Snowflake trial account and the whole team will work in thea
 8. Navigate to **Governance & Security --> Users & roles**
 9. Click the **INVITE** button.
 10. Add each team members email address and the ACCOUNTADMIN role.
-11. Once added click the **Invite User** button
-12. Each user should get an email. Follow the instruction to finsh seting up your user.
+11. Add each Snowflake supporters email address and the ACCOUNTADMIN role.
+12. Once added click the **Invite User** button
+13. Each user should get an invitation email. Follow the instruction to finish seting up your user.
 
 ### Run the 01_setup.sql script (note only 1 team member needs to do this)
 
-1. Copy the contents of the 01_setup.sql file
+1. Copy the contents of the **01_setup.sql** file
 2. Create a new worksheet in your shared workspace
-3. Paste the contents of the 01_setup.sql file
+3. Paste the contents of the **01_setup.sql** file
 4. Run all the commands.
 
 ### Run the 02_dataload.sql script (note only 1 team member needs to do this)
 
-1. Copy the contents of the 02_dataload.sql file
+1. Copy the contents of the **02_dataload.sql** file
 2. Create a new worksheet in your shared workspace
-3. Paste the contents of the 02_dataload.sql file
+3. Paste the contents of the **02_dataload.sql** file
 4. Run all the commands.
 5. This will load data into the tables earlier. NOTE: This may take a few minutes to run
 
-## You are now ready to start reviewing and implementing the business and technical requirements. Good luck
+### Create a validation Worksheet in your Workspace
+
+When you have completed a requirement the Snowflake team will validate you have "delivered" the requirements. To do this you will add any queries you create to met the success criterai intothe **validation worksheet** then let the Snowflake team know it is ready to be tested.
+
+1. In your share workspace create a new worksheet called **Validation**
+2. When you have completed a requirement add you queries into the **validation** worksheet. Make sure you add a comment that explains what requirement and success criteria the query is for
+3. :warning: You must remember to click the **Publish Changes** btton on the worksheet to allow others, including Snowflake , to see the changes :warning:
+
+
+:white_check_mark: **You are now ready to start reviewing and implementing the business and technical requirements. Good luck**
