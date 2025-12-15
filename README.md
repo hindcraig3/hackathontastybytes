@@ -56,3 +56,34 @@ When you have completed a requirement the Snowflake team will validate you have 
 
 
 :white_check_mark: **You are now ready to start reviewing and implementing the business and technical requirements. Good luck**
+
+# HINTS and TIPS
+
+**REQ 3: Gain Insights into Areas for Improvement**
+
+```
+SELECT 
+        REVIEW_ID,
+        AI_COMPLETE(
+            model => 'claude-4-sonnet',
+            prompt => 'Analyze this food truck customer review and identify specific areas for improvement. Classify areas for improvement as operational issue, food quality issue, service issue. : ' || REVIEW,
+            response_format => {
+                        'type' : 'json',
+                        'schema' : {
+                                'type' : 'object', 'properties' : {
+                                    'areas_for_improvement': {'type' : 'object', 'properties': {
+                                        'operational' : {'type' : 'boolean'},
+                                        'food_quality' : {'type' : 'boolean'},
+                                        'service' : {'type' : 'boolean'}
+                                        }
+                                    }
+                                }
+                        }
+                    }
+        ) AS improvement_areas
+    FROM TASTYBYTES_ANALYTICS.RAW.TRUCK_REVIEWS r
+        JOIN tastybytes_analytics.raw.order_header h on r.order_id = h.order_id
+    WHERE REVIEW IS NOT NULL 
+      AND LENGTH(TRIM(REVIEW)) > 0
+```
+
