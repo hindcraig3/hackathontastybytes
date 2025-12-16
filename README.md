@@ -113,7 +113,7 @@ Here is some sample code to create your Snowpipe.  This assumes you have created
 ```
 CREATE or REPLACE PIPE tastybytes_analytics.raw.tasty_iot_pipe
   AUTO_INGEST = TRUE
-  AWS_SNS_TOPIC='arn:aws:sns:us-west-2:484577546576:chind_snowpipe_data_gen'
+  AWS_SNS_TOPIC='<SNS TOPIC ARN GOES HERE>'
   AS
     COPY INTO tastybytes_analytics.raw.truck_iot (raw_payload,source_filename,load_timestamp)
       FROM (
