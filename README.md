@@ -106,4 +106,21 @@ SELECT
     WHERE REVIEW IS NOT NULL 
       AND LENGTH(TRIM(REVIEW)) > 0
 ```
+**REQ 5 : Ingest IoT data**
 
+Here is some sample code to create your Snowpipe.  This assumes you have created a table called truck_iot with the specified format ( Check business requirements)
+
+```
+CREATE or REPLACE PIPE tastybytes_analytics.raw.tasty_iot_pipe
+  AUTO_INGEST = TRUE
+  AWS_SNS_TOPIC='arn:aws:sns:us-west-2:484577546576:chind_snowpipe_data_gen'
+  AS
+    COPY INTO tastybytes_analytics.raw.truck_iot (raw_payload,source_filename,load_timestamp)
+      FROM (
+        select $1::VARIANT,
+        METADATA$FILENAME,
+        CURRENT_TIMESTAMP()
+        from  @tastybytes_analytics.raw.s3_iot_data
+      )
+      FILE_FORMAT = tastybytes_analytics.raw.json_iot_ff;
+```
