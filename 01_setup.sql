@@ -292,8 +292,8 @@ CREATE STORAGE INTEGRATION tasybytes_iot_data
   TYPE = EXTERNAL_STAGE
   STORAGE_PROVIDER = 'S3'
   ENABLED = TRUE
-  STORAGE_AWS_ROLE_ARN = 'arn:aws:iam::484577546576:role/chind_snowpipe_data_gen_access'
-  STORAGE_ALLOWED_LOCATIONS = ('s3://chind-snowpipe-484577546576-us-west2/');
+  STORAGE_AWS_ROLE_ARN = '<STORAGE AWS ROLE ARN GOES HERE>'
+  STORAGE_ALLOWED_LOCATIONS = ('<S3 STORAGE LOCATION GOES HERE>');
 
 -- TEAM runs this to get configure details
 -- AWS IAM ROLE Trust policy needs to be updated with the extra user ARN's and External id's for each team
