@@ -63,7 +63,7 @@ When you have completed a requirement the Snowflake team will validate you have 
 
 * Gross profit can be calculated at the ORDER_DETAIL level. You'll need to get the ITEM COST from the menu table.
 * You can then create a query that brings together TRUCK, FRANCHISE, ORDER_HEADER,ORDER_LINE and MENU.
-* Remember the MENU table contains menu items AND menu_type so you may need to figure out how to get a distinct list of menu_type_id's abd truck Brands. A Common Tbale expression may be useful. e.g
+* Remember the MENU table contains menu items AND menu_type so you may need to figure out how to get a distinct list of menu_type_id's and truck Brands. A Common Table expression (CTE) may be useful. e.g
   ```
   WITH listoftruckbrands AS
   (
