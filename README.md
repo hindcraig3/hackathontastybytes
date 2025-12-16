@@ -78,7 +78,7 @@ When you have completed a requirement the Snowflake team will validate you have 
 
 **REQ 3: Gain Insights into Areas for Improvement**
 
-This query uses AI_COMPLETE() to extract the issues from a truck review. You may then need to have soem SQL to flatten out the JSON response. 
+This query uses AI_COMPLETE() to extract the issues from a truck review. You may then need to have some additonal SQL to flatten out the JSON response. 
 Using A Common Table Expression may be useful.
 
 ```
